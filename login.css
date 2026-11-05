@@ -1,0 +1,180 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #fff;
+    color: #111;
+    min-height: 100vh;
+    padding: 20px 15px;
+}
+
+/* SnapCart logo */
+.logo {
+    text-align: center;
+    margin: 5px 0 22px;
+}
+
+.logo a {
+    font-size: 32px;
+    font-weight: bold;
+    letter-spacing: -1.5px;
+    color: #131921;
+    text-decoration: none;
+}
+
+.logo span {
+    color: #ff9900;
+}
+
+/* Registration card */
+.register-container {
+    max-width: 380px;
+    width: 100%;
+    margin: auto;
+    padding: 24px 26px;
+    border: 1px solid #d5d9d9;
+    border-radius: 8px;
+    background: #fff;
+}
+
+.register-container h2 {
+    font-size: 28px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.register-container label {
+    display: block;
+    font-size: 13px;
+    font-weight: bold;
+    margin: 14px 0 6px;
+}
+
+.register-container input,
+.register-container select {
+    width: 100%;
+    min-width: 0;
+    height: 38px;
+    padding: 8px 10px;
+    border: 1px solid #888c8c;
+    border-radius: 4px;
+    outline: none;
+    background: #fff;
+    font-size: 13px;
+}
+
+.register-container input:focus,
+.register-container select:focus {
+    border-color: #007185;
+    box-shadow: 0 0 4px rgba(0, 113, 133, 0.4);
+}
+
+/* Mobile number field */
+.mobile-field {
+    display: flex;
+    gap: 8px;
+}
+
+.mobile-field select {
+    width: 100px;
+    flex-shrink: 0;
+}
+
+.mobile-field input {
+    flex: 1;
+}
+
+/* Helper text */
+.hint {
+    margin-top: 8px;
+    color: #565959;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+/* Create account button */
+.create-btn {
+    width: 100%;
+    margin-top: 18px;
+    padding: 11px 8px;
+    border: 1px solid #fcd200;
+    border-radius: 22px;
+    background: #ffd814;
+    color: #111;
+    font-size: 13px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.create-btn:hover {
+    background: #f7ca00;
+}
+
+.terms {
+    margin: 18px 0;
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+.register-container a,
+footer a {
+    color: #007185;
+    text-decoration: none;
+}
+
+.register-container a:hover,
+footer a:hover {
+    color: #c45500;
+    text-decoration: underline;
+}
+
+.register-container hr {
+    border: none;
+    border-top: 1px solid #e7e7e7;
+    margin: 18px 0;
+}
+
+.existing {
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+/* Footer */
+footer {
+    max-width: 500px;
+    margin: 30px auto 0;
+    padding-top: 22px;
+    border-top: 1px solid #eee;
+    text-align: center;
+    font-size: 11px;
+}
+
+footer a {
+    display: inline-block;
+    margin: 0 8px 10px;
+}
+
+footer p {
+    margin-top: 10px;
+    color: #565959;
+}
+
+/* Responsive layout */
+@media (max-width: 420px) {
+    body {
+        padding: 15px 10px;
+    }
+
+    .register-container {
+        padding: 22px 17px;
+    }
+
+    .logo a {
+        font-size: 29px;
+    }
+}

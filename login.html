@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account - SnapCart</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+    <div class="logo">
+        <a href="index.html">snap<span>cart</span></a>
+    </div>
+
+    <div class="register-container">
+        <h2>Create account</h2>
+
+        <form action="#" method="post">
+
+            <label for="name">Your name</label>
+            <input type="text" id="name" name="name"
+                   placeholder="First and last name" required>
+
+            <label for="mobile">Mobile number</label>
+            <div class="mobile-field">
+                <select name="countryCode" aria-label="Country code">
+                    <option value="+91">IN +91</option>
+                    <option value="+1">US +1</option>
+                    <option value="+44">UK +44</option>
+                </select>
+                <input type="tel" id="mobile" name="mobile"
+                       placeholder="Mobile number" required>
+            </div>
+
+            <label for="email">Email (optional)</label>
+            <input type="email" id="email" name="email"
+                   placeholder="Enter your email">
+
+            <label for="password">Create a password</label>
+            <input type="password" id="password" name="password"
+                   placeholder="At least 6 characters"
+                   minlength="6" required>
+
+            <label for="confirmPassword">Re-enter password</label>
+            <input type="password" id="confirmPassword"
+                   name="confirmPassword"
+                   placeholder="Confirm your password" minlength="6" required>
+
+            <p class="hint">Passwords should contain at least 6 characters.</p>
+
+            <button type="submit" class="create-btn">
+                Create your SnapCart account
+            </button>
+
+            <p class="terms">
+                By creating an account, you agree to SnapCart's
+                <a href="#">Conditions of Use</a> and
+                <a href="#">Privacy Notice</a>.
+            </p>
+
+            <hr>
+
+            <p class="existing">
+                Already have an account?
+                <a href="sign.html">Sign in</a>
+            </p>
+
+        </form>
+    </div>
+
+    <footer>
+        <a href="#">Conditions of Use</a>
+        <a href="#">Privacy Notice</a>
+        <a href="#">Help</a>
+        <p>© 2026 SnapCart. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,1361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kurthi Sets - SnapCart</title>
+
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="a.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<nav class="top-navbar navbar navbar-expand-lg">
+    <div class="container-fluid px-3">
+  
+<!-- BACK TO MAIN PAGE -->
+<a href="index.html" class="back-main" title="Back to Main Page">
+    <i class="bi bi-arrow-left"></i>
+</a>
+
+        <a href="index.html" class="brand">
+            Snap<span>Cart</span>
+        </a>
+
+        <a href="#" class="location-box ms-3 d-none d-lg-block">
+            <small>Deliver to</small>
+            <strong>
+                <i class="bi bi-geo-alt"></i> India
+            </strong>
+        </a>
+
+        <div class="search-box d-flex mx-lg-3">
+            <select class="form-select">
+                <option>All</option>
+                <option>Fashion</option>
+                <option>Books</option>
+                <option>Electronics</option>
+                <option>Home</option>
+            </select>
+
+            <input
+                type="text"
+                class="form-control"
+                placeholder="Search products..."
+                id="searchInput"
+            >
+
+            <button class="search-btn" onclick="searchProducts()">
+                <i class="bi bi-search fs-5"></i>
+            </button>
+        </div>
+
+        <a href="#" class="nav-link-custom mx-2 d-none d-md-block">
+            <small class="d-block">Hello, Sign in</small>
+            <strong>Account & Lists</strong>
+        </a>
+
+        <a href="#" class="nav-link-custom mx-2 d-none d-md-block">
+            <small class="d-block">Returns</small>
+            <strong>& Orders</strong>
+        </a>
+
+        <a href="#" class="cart ms-2" onclick="showCart()">
+            <i class="bi bi-cart3"></i>
+            <span class="cart-count" id="cartCount">0</span>
+        </a>
+
+    </div>
+</nav>
+
+
+
+
+<!-- ================= KURTHI PRODUCTS ================= -->
+<main class="kurthi-main">
+
+    <div class="kurthi-header">
+
+        <div>
+            <h1>Kurthi Sets</h1>
+            <p>Explore stylish and beautiful Kurthi Sets</p>
+        </div>
+
+        <select id="sortSelect" class="kurthi-filter" onchange="sortProducts()">
+            <option value="default">Sort By</option>
+            <option value="low">Price: Low to High</option>
+            <option value="high">Price: High to Low</option>
+        </select>
+
+    </div>
+
+
+    <div class="row g-4" id="productContainer">
+
+        <!-- PRODUCT 1 -->
+        <div class="col-12 col-sm-6 col-lg-3 product-item" data-price="799">
+
+            <div class="kurthi-card">
+
+                <div class="kurthi-image-box">
+
+                    <span class="kurthi-badge">20% OFF</span>
+
+                    <button class="wishlist" onclick="toggleWishlist(this)">
+                        <i class="bi bi-heart"></i>
+                    </button>
+
+                    <img src="skin1.jpeg" alt="Kurthi Set 1">
+
+                </div>
+
+                <div class="kurthi-body">
+
+                    <h5>Women's Stylish Kurthi Set</h5>
+
+                    <div class="kurthi-rating">
+                        ★★★★☆
+                        <span>4.2</span>
+                    </div>
+
+                    <div class="kurthi-price">
+                        ₹799
+                    </div>
+
+                    <p class="delivery">
+                        FREE Delivery
+                    </p>
+
+                    <button
+                        class="kurthi-add-cart"
+                        onclick="addToCart('Women Stylish Kurthi Set', 799)">
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCT 2 -->
+        <div class="col-12 col-sm-6 col-lg-3 product-item" data-price="899">
+
+            <div class="kurthi-card">
+
+                <div class="kurthi-image-box">
+
+                    <span class="kurthi-badge">15% OFF</span>
+
+                    <button class="wishlist" onclick="toggleWishlist(this)">
+                        <i class="bi bi-heart"></i>
+                    </button>
+
+                    <img src="skin2.jpeg" alt="Kurthi Set 2">
+
+                </div>
+
+                <div class="kurthi-body">
+
+                    <h5>Elegant Cotton Kurthi Set</h5>
+
+                    <div class="kurthi-rating">
+                        ★★★★☆
+                        <span>4.3</span>
+                    </div>
+
+                    <div class="kurthi-price">
+                        ₹899
+                    </div>
+
+                    <p class="delivery">
+                        FREE Delivery
+                    </p>
+
+                    <button
+                        class="kurthi-add-cart"
+                        onclick="addToCart('Elegant Cotton Kurthi Set', 899)">
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCT 3 -->
+        <div class="col-12 col-sm-6 col-lg-3 product-item" data-price="999">
+
+            <div class="kurthi-card">
+
+                <div class="kurthi-image-box">
+
+                    <span class="kurthi-badge">25% OFF</span>
+
+                    <button class="wishlist" onclick="toggleWishlist(this)">
+                        <i class="bi bi-heart"></i>
+                    </button>
+
+                    <img src="skin3.jpeg" alt="Kurthi Set 3">
+
+                </div>
+
+                <div class="kurthi-body">
+
+                    <h5>Printed Designer Kurthi Set</h5>
+
+                    <div class="kurthi-rating">
+                        ★★★★★
+                        <span>4.5</span>
+                    </div>
+
+                    <div class="kurthi-price">
+                        ₹999
+                    </div>
+
+                    <p class="delivery">
+                        FREE Delivery
+                    </p>
+
+                    <button
+                        class="kurthi-add-cart"
+                        onclick="addToCart('Printed Designer Kurthi Set', 999)">
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCT 4 -->
+        <div class="col-12 col-sm-6 col-lg-3 product-item" data-price="1099">
+
+            <div class="kurthi-card">
+
+                <div class="kurthi-image-box">
+
+                    <span class="kurthi-badge">18% OFF</span>
+
+                    <button class="wishlist" onclick="toggleWishlist(this)">
+                        <i class="bi bi-heart"></i>
+                    </button>
+
+                    <img src="skin4.jpeg" alt="Kurthi Set 4">
+
+                </div>
+
+                <div class="kurthi-body">
+
+                    <h5>Traditional Floral Kurthi Set</h5>
+
+                    <div class="kurthi-rating">
+                        ★★★★☆
+                        <span>4.4</span>
+                    </div>
+
+                    <div class="kurthi-price">
+                        ₹1099
+                    </div>
+
+                    <p class="delivery">
+                        FREE Delivery
+                    </p>
+
+                    <button
+                        class="kurthi-add-cart"
+                        onclick="addToCart('Traditional Floral Kurthi Set', 1099)">
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCT 5 -->
+        <div class="col-12 col-sm-6 col-lg-3 product-item" data-price="1199">
+
+            <div class="kurthi-card">
+
+                <div class="kurthi-image-box">
+
+                    <span class="kurthi-badge">30% OFF</span>
+
+                    <button class="wishlist" onclick="toggleWishlist(this)">
+                        <i class="bi bi-heart"></i>
+                    </button>
+
+                    <img src="skin5.jpeg" alt="Kurthi Set 5">
+
+                </div>
+
+                <div class="kurthi-body">
+
+                    <h5>Modern Anarkali Kurthi Set</h5>
+
+                    <div class="kurthi-rating">
+                        ★★★★★
+                        <span>4.6</span>
+                    </div>
+
+                    <div class="kurthi-price">
+                        ₹1199
+                    </div>
+
+                    <p class="delivery">
+                        FREE Delivery
+                    </p>
+
+                    <button
+                        class="kurthi-add-cart"
+                        onclick="addToCart('Modern Anarkali Kurthi Set', 1199)">
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCT 6 -->
+        <div class="col-12 col-sm-6 col-lg-3 product-item" data-price="749">
+
+            <div class="kurthi-card">
+
+                <div class="kurthi-image-box">
+
+                    <span class="kurthi-badge">22% OFF</span>
+
+                    <button class="wishlist" onclick="toggleWishlist(this)">
+                        <i class="bi bi-heart"></i>
+                    </button>
+
+                    <img src="w6.jpeg" alt="Kurthi Set 6">
+
+                </div>
+
+                <div class="kurthi-body">
+
+                    <h5>Casual Daily Wear Kurthi</h5>
+
+                    <div class="kurthi-rating">
+                        ★★★★☆
+                        <span>4.1</span>
+                    </div>
+
+                    <div class="kurthi-price">
+                        ₹749
+                    </div>
+
+                    <p class="delivery">
+                        FREE Delivery
+                    </p>
+
+                    <button
+                        class="kurthi-add-cart"
+                        onclick="addToCart('Casual Daily Wear Kurthi', 749)">
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCT 7 -->
+        <div class="col-12 col-sm-6 col-lg-3 product-item" data-price="1299">
+
+            <div class="kurthi-card">
+
+                <div class="kurthi-image-box">
+
+                    <span class="kurthi-badge">28% OFF</span>
+
+                    <button class="wishlist" onclick="toggleWishlist(this)">
+                        <i class="bi bi-heart"></i>
+                    </button>
+
+                    <img src="skin7.jpeg" alt="Kurthi Set 7">
+
+                </div>
+
+                <div class="kurthi-body">
+
+                    <h5>Party Wear Embroidery Kurthi</h5>
+
+                    <div class="kurthi-rating">
+                        ★★★★★
+                        <span>4.7</span>
+                    </div>
+
+                    <div class="kurthi-price">
+                        ₹1299
+                    </div>
+
+                    <p class="delivery">
+                        FREE Delivery
+                    </p>
+
+                    <button
+                        class="kurthi-add-cart"
+                        onclick="addToCart('Party Wear Embroidery Kurthi', 1299)">
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCT 8 -->
+        <div class="col-12 col-sm-6 col-lg-3 product-item" data-price="949">
+
+            <div class="kurthi-card">
+
+                <div class="kurthi-image-box">
+
+                    <span class="kurthi-badge">20% OFF</span>
+
+                    <button class="wishlist" onclick="toggleWishlist(this)">
+                        <i class="bi bi-heart"></i>
+                    </button>
+
+                    <img src="skin8.jpeg" alt="Kurthi Set 8">
+
+                </div>
+
+                <div class="kurthi-body">
+
+                    <h5>Elegant Printed Kurthi Set</h5>
+
+                    <div class="kurthi-rating">
+                        ★★★★☆
+                        <span>4.3</span>
+                    </div>
+
+                    <div class="kurthi-price">
+                        ₹949
+                    </div>
+
+                    <p class="delivery">
+                        FREE Delivery
+                    </p>
+
+                    <button
+                        class="kurthi-add-cart"
+                        onclick="addToCart('Elegant Printed Kurthi Set', 949)">
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- PRODUCT 9 -->
+        <div class="col-12 col-sm-6 col-lg-3 product-item" data-price="1299">
+
+            <div class="kurthi-card">
+
+                <div class="kurthi-image-box">
+
+                    <span class="kurthi-badge">28% OFF</span>
+
+                    <button class="wishlist" onclick="toggleWishlist(this)">
+                        <i class="bi bi-heart"></i>
+                    </button>
+
+                    <img src="skin9.jpeg" alt="Kurthi Set 7">
+
+                </div>
+
+                <div class="kurthi-body">
+
+                    <h5>Party Wear Embroidery Kurthi</h5>
+
+                    <div class="kurthi-rating">
+                        ★★★★★
+                        <span>4.7</span>
+                    </div>
+
+                    <div class="kurthi-price">
+                        ₹1299
+                    </div>
+
+                    <p class="delivery">
+                        FREE Delivery
+                    </p>
+
+                    <button
+                        class="kurthi-add-cart"
+                        onclick="addToCart('Party Wear Embroidery Kurthi', 1299)">
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- PRODUCT 10 -->
+        <div class="col-12 col-sm-6 col-lg-3 product-item" data-price="1299">
+
+            <div class="kurthi-card">
+
+                <div class="kurthi-image-box">
+
+                    <span class="kurthi-badge">28% OFF</span>
+
+                    <button class="wishlist" onclick="toggleWishlist(this)">
+                        <i class="bi bi-heart"></i>
+                    </button>
+
+                    <img src="skin10.jpeg" alt="Kurthi Set 7">
+
+                </div>
+
+                <div class="kurthi-body">
+
+                    <h5>Party Wear Embroidery Kurthi</h5>
+
+                    <div class="kurthi-rating">
+                        ★★★★★
+                        <span>4.7</span>
+                    </div>
+
+                    <div class="kurthi-price">
+                        ₹1299
+                    </div>
+
+                    <p class="delivery">
+                        FREE Delivery
+                    </p>
+
+                    <button
+                        class="kurthi-add-cart"
+                        onclick="addToCart('Party Wear Embroidery Kurthi', 1299)">
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- PRODUCT 11 -->
+        <div class="col-12 col-sm-6 col-lg-3 product-item" data-price="1299">
+
+            <div class="kurthi-card">
+
+                <div class="kurthi-image-box">
+
+                    <span class="kurthi-badge">28% OFF</span>
+
+                    <button class="wishlist" onclick="toggleWishlist(this)">
+                        <i class="bi bi-heart"></i>
+                    </button>
+
+                    <img src="skin11.jpeg" alt="Kurthi Set 7">
+
+                </div>
+
+                <div class="kurthi-body">
+
+                    <h5>Party Wear Embroidery Kurthi</h5>
+
+                    <div class="kurthi-rating">
+                        ★★★★★
+                        <span>4.7</span>
+                    </div>
+
+                    <div class="kurthi-price">
+                        ₹1299
+                    </div>
+
+                    <p class="delivery">
+                        FREE Delivery
+                    </p>
+
+                    <button
+                        class="kurthi-add-cart"
+                        onclick="addToCart('Party Wear Embroidery Kurthi', 1299)">
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- PRODUCT 12 -->
+        <div class="col-12 col-sm-6 col-lg-3 product-item" data-price="1299">
+
+            <div class="kurthi-card">
+
+                <div class="kurthi-image-box">
+
+                    <span class="kurthi-badge">28% OFF</span>
+
+                    <button class="wishlist" onclick="toggleWishlist(this)">
+                        <i class="bi bi-heart"></i>
+                    </button>
+
+                    <img src="skin12.jpeg" alt="Kurthi Set 7">
+
+                </div>
+
+                <div class="kurthi-body">
+
+                    <h5>Party Wear Embroidery Kurthi</h5>
+
+                    <div class="kurthi-rating">
+                        ★★★★★
+                        <span>4.7</span>
+                    </div>
+
+                    <div class="kurthi-price">
+                        ₹1299
+                    </div>
+
+                    <p class="delivery">
+                        FREE Delivery
+                    </p>
+
+                    <button
+                        class="kurthi-add-cart"
+                        onclick="addToCart('Party Wear Embroidery Kurthi', 1299)">
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- PRODUCT 13 -->
+        <div class="col-12 col-sm-6 col-lg-3 product-item" data-price="1299">
+
+            <div class="kurthi-card">
+
+                <div class="kurthi-image-box">
+
+                    <span class="kurthi-badge">28% OFF</span>
+
+                    <button class="wishlist" onclick="toggleWishlist(this)">
+                        <i class="bi bi-heart"></i>
+                    </button>
+
+                    <img src="skin13.jpeg" alt="Kurthi Set 7">
+
+                </div>
+
+                <div class="kurthi-body">
+
+                    <h5>Party Wear Embroidery Kurthi</h5>
+
+                    <div class="kurthi-rating">
+                        ★★★★★
+                        <span>4.7</span>
+                    </div>
+
+                    <div class="kurthi-price">
+                        ₹1299
+                    </div>
+
+                    <p class="delivery">
+                        FREE Delivery
+                    </p>
+
+                    <button
+                        class="kurthi-add-cart"
+                        onclick="addToCart('Party Wear Embroidery Kurthi', 1299)">
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- PRODUCT 14 -->
+        <div class="col-12 col-sm-6 col-lg-3 product-item" data-price="1299">
+
+            <div class="kurthi-card">
+
+                <div class="kurthi-image-box">
+
+                    <span class="kurthi-badge">28% OFF</span>
+
+                    <button class="wishlist" onclick="toggleWishlist(this)">
+                        <i class="bi bi-heart"></i>
+                    </button>
+
+                    <img src="skin14.jpeg" alt="Kurthi Set 7">
+
+                </div>
+
+                <div class="kurthi-body">
+
+                    <h5>Party Wear Embroidery Kurthi</h5>
+
+                    <div class="kurthi-rating">
+                        ★★★★★
+                        <span>4.7</span>
+                    </div>
+
+                    <div class="kurthi-price">
+                        ₹1299
+                    </div>
+
+                    <p class="delivery">
+                        FREE Delivery
+                    </p>
+
+                    <button
+                        class="kurthi-add-cart"
+                        onclick="addToCart('Party Wear Embroidery Kurthi', 1299)">
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+              <div class="col-12 col-sm-6 col-lg-3 product-item" data-price="1299">
+
+            <div class="kurthi-card">
+
+                <div class="kurthi-image-box">
+
+                    <span class="kurthi-badge">28% OFF</span>
+
+                    <button class="wishlist" onclick="toggleWishlist(this)">
+                        <i class="bi bi-heart"></i>
+                    </button>
+
+                    <img src="skin15.jpeg" alt="Kurthi Set 7">
+
+                </div>
+
+                <div class="kurthi-body">
+
+                    <h5>Party Wear Embroidery Kurthi</h5>
+
+                    <div class="kurthi-rating">
+                        ★★★★★
+                        <span>4.7</span>
+                    </div>
+
+                    <div class="kurthi-price">
+                        ₹1299
+                    </div>
+
+                    <p class="delivery">
+                        FREE Delivery
+                    </p>
+
+                    <button
+                        class="kurthi-add-cart"
+                        onclick="addToCart('Party Wear Embroidery Kurthi', 1299)">
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- PRODUCT 16 -->
+        <div class="col-12 col-sm-6 col-lg-3 product-item" data-price="1299">
+
+            <div class="kurthi-card">
+
+                <div class="kurthi-image-box">
+
+                    <span class="kurthi-badge">28% OFF</span>
+
+                    <button class="wishlist" onclick="toggleWishlist(this)">
+                        <i class="bi bi-heart"></i>
+                    </button>
+
+                    <img src="skin16.jpeg" alt="Kurthi Set 7">
+
+                </div>
+
+                <div class="kurthi-body">
+
+                    <h5>Party Wear Embroidery Kurthi</h5>
+
+                    <div class="kurthi-rating">
+                        ★★★★★
+                        <span>4.7</span>
+                    </div>
+
+                    <div class="kurthi-price">
+                        ₹1299
+                    </div>
+
+                    <p class="delivery">
+                        FREE Delivery
+                    </p>
+
+                    <button
+                        class="kurthi-add-cart"
+                        onclick="addToCart('Party Wear Embroidery Kurthi', 1299)">
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- PRODUCT 17 -->
+        <div class="col-12 col-sm-6 col-lg-3 product-item" data-price="1299">
+
+            <div class="kurthi-card">
+
+                <div class="kurthi-image-box">
+
+                    <span class="kurthi-badge">28% OFF</span>
+
+                    <button class="wishlist" onclick="toggleWishlist(this)">
+                        <i class="bi bi-heart"></i>
+                    </button>
+
+                    <img src="skin17.jpeg" alt="Kurthi Set 7">
+
+                </div>
+
+                <div class="kurthi-body">
+
+                    <h5>Party Wear Embroidery Kurthi</h5>
+
+                    <div class="kurthi-rating">
+                        ★★★★★
+                        <span>4.7</span>
+                    </div>
+
+                    <div class="kurthi-price">
+                        ₹1299
+                    </div>
+
+                    <p class="delivery">
+                        FREE Delivery
+                    </p>
+
+                    <button
+                        class="kurthi-add-cart"
+                        onclick="addToCart('Party Wear Embroidery Kurthi', 1299)">
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- PRODUCT 18 -->
+        <div class="col-12 col-sm-6 col-lg-3 product-item" data-price="1299">
+
+            <div class="kurthi-card">
+
+                <div class="kurthi-image-box">
+
+                    <span class="kurthi-badge">28% OFF</span>
+
+                    <button class="wishlist" onclick="toggleWishlist(this)">
+                        <i class="bi bi-heart"></i>
+                    </button>
+
+                    <img src="skin18.jpeg" alt="Kurthi Set 7">
+
+                </div>
+
+                <div class="kurthi-body">
+
+                    <h5>Party Wear Embroidery Kurthi</h5>
+
+                    <div class="kurthi-rating">
+                        ★★★★★
+                        <span>4.7</span>
+                    </div>
+
+                    <div class="kurthi-price">
+                        ₹1299
+                    </div>
+
+                    <p class="delivery">
+                        FREE Delivery
+                    </p>
+
+                    <button
+                        class="kurthi-add-cart"
+                        onclick="addToCart('Party Wear Embroidery Kurthi', 1299)">
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- PRODUCT 19 -->
+        <div class="col-12 col-sm-6 col-lg-3 product-item" data-price="1299">
+
+            <div class="kurthi-card">
+
+                <div class="kurthi-image-box">
+
+                    <span class="kurthi-badge">28% OFF</span>
+
+                    <button class="wishlist" onclick="toggleWishlist(this)">
+                        <i class="bi bi-heart"></i>
+                    </button>
+
+                    <img src="skin19.jpeg" alt="Kurthi Set 7">
+
+                </div>
+
+                <div class="kurthi-body">
+
+                    <h5>Party Wear Embroidery Kurthi</h5>
+
+                    <div class="kurthi-rating">
+                        ★★★★★
+                        <span>4.7</span>
+                    </div>
+
+                    <div class="kurthi-price">
+                        ₹1299
+                    </div>
+
+                    <p class="delivery">
+                        FREE Delivery
+                    </p>
+
+                    <button
+                        class="kurthi-add-cart"
+                        onclick="addToCart('Party Wear Embroidery Kurthi', 1299)">
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- PRODUCT 20 -->
+        <div class="col-12 col-sm-6 col-lg-3 product-item" data-price="1299">
+
+            <div class="kurthi-card">
+
+                <div class="kurthi-image-box">
+
+                    <span class="kurthi-badge">28% OFF</span>
+
+                    <button class="wishlist" onclick="toggleWishlist(this)">
+                        <i class="bi bi-heart"></i>
+                    </button>
+
+                    <img src="skin20.jpeg" alt="Kurthi Set 7">
+
+                </div>
+
+                <div class="kurthi-body">
+
+                    <h5>Party Wear Embroidery Kurthi</h5>
+
+                    <div class="kurthi-rating">
+                        ★★★★★
+                        <span>4.7</span>
+                    </div>
+
+                    <div class="kurthi-price">
+                        ₹1299
+                    </div>
+
+                    <p class="delivery">
+                        FREE Delivery
+                    </p>
+
+                    <button
+                        class="kurthi-add-cart"
+                        onclick="addToCart('Party Wear Embroidery Kurthi', 1299)">
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+</main>
+
+
+<!-- ================= BACK TO TOP ================= -->
+<div class="back-to-top" onclick="scrollToTop()">
+    <i class="bi bi-arrow-up"></i>
+    Back to top
+</div>
+
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-md-3">
+                <h5>Get to Know Us</h5>
+                <a href="#">About Us</a>
+                <a href="#">Careers</a>
+                <a href="#">Press Releases</a>
+                <a href="#">Our Services</a>
+            </div>
+
+            <div class="col-md-3">
+                <h5>Connect with Us</h5>
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">Instagram</a>
+            </div>
+
+            <div class="col-md-3">
+                <h5>Make Money with Us</h5>
+                <a href="#">Sell on ShopZone</a>
+                <a href="#">Sell under ShopZone Accelerator</a>
+                <a href="#">Protect and Build Your Brand</a>
+            </div>
+
+            <div class="col-md-3">
+                <h5>Let Us Help You</h5>
+                <a href="#">Your Account</a>
+                <a href="#">Returns Centre</a>
+                <a href="#">Help</a>
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+<div class="footer-bottom">
+    © 2026 SnapCart. All Rights Reserved.
+</div>
+
+
+<!-- ================= CART MODAL ================= -->
+<div class="modal fade" id="cartModal" tabindex="-1">
+
+    <div class="modal-dialog modal-dialog-centered">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h5 class="modal-title">
+                    Shopping Cart
+                </h5>
+
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal">
+                </button>
+
+            </div>
+
+            <div class="modal-body">
+
+                <div id="cartItems">
+                    <p>Your cart is empty.</p>
+                </div>
+
+                <hr>
+
+                <h5>
+                    Total:
+                    ₹<span id="cartTotal">0</span>
+                </h5>
+
+            </div>
+
+            <div class="modal-footer">
+
+                <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal">
+                    Close
+                </button>
+
+                <button
+                    type="button"
+                    class="btn btn-warning"
+                    onclick="checkout()">
+                    Proceed to Buy
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+    
+        
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<script>
+
+let cart = [];
+
+
+function addToCart(name, price) {
+
+    cart.push({
+        name: name,
+        price: price
+    });
+
+    updateCart();
+
+    alert(name + " added to cart!");
+
+}
+
+
+function updateCart() {
+
+    const cartCount = document.getElementById("cartCount");
+    const cartItems = document.getElementById("cartItems");
+    const cartTotal = document.getElementById("cartTotal");
+
+    cartCount.textContent = cart.length;
+
+    if (cart.length === 0) {
+
+        cartItems.innerHTML =
+            "<p>Your cart is empty.</p>";
+
+        cartTotal.textContent = "0";
+
+        return;
+    }
+
+
+    let total = 0;
+
+    cartItems.innerHTML = "";
+
+    cart.forEach((item, index) => {
+
+        total += item.price;
+
+        cartItems.innerHTML += `
+            <div class="d-flex justify-content-between align-items-center mb-3">
+
+                <div>
+                    <strong>${item.name}</strong>
+                    <br>
+                    ₹${item.price}
+                </div>
+
+                <button
+                    class="btn btn-sm btn-danger"
+                    onclick="removeFromCart(${index})">
+                    Remove
+                </button>
+
+            </div>
+        `;
+
+    });
+
+    cartTotal.textContent = total;
+
+}
+
+
+function removeFromCart(index) {
+
+    cart.splice(index, 1);
+
+    updateCart();
+
+}
+
+
+function showCart() {
+
+    updateCart();
+
+    const modal =
+        new bootstrap.Modal(document.getElementById("cartModal"));
+
+    modal.show();
+
+}
+
+
+function checkout() {
+
+    if (cart.length === 0) {
+
+        alert("Your cart is empty!");
+
+        return;
+    }
+
+    alert("Order placed successfully!");
+
+}
+
+
+function searchProducts() {
+
+    const search =
+        document.getElementById("searchInput").value.toLowerCase();
+
+    const products =
+        document.querySelectorAll(".product-item");
+
+    products.forEach(product => {
+
+        const text =
+            product.innerText.toLowerCase();
+
+        if (text.includes(search)) {
+            product.style.display = "";
+        } else {
+            product.style.display = "none";
+        }
+
+    });
+
+}
+
+
+document.getElementById("searchInput").addEventListener("keydown", function(event) {
+
+    if (event.key === "Enter") {
+        searchProducts();
+    }
+
+});
+
+
+function toggleWishlist(button) {
+
+    button.classList.toggle("active");
+
+    const icon = button.querySelector("i");
+
+    if (button.classList.contains("active")) {
+
+        icon.classList.remove("bi-heart");
+        icon.classList.add("bi-heart-fill");
+
+    } else {
+
+        icon.classList.remove("bi-heart-fill");
+        icon.classList.add("bi-heart");
+
+    }
+
+}
+
+
+function sortProducts() {
+
+    const container =
+        document.getElementById("productContainer");
+
+    const products =
+        Array.from(container.querySelectorAll(".product-item"));
+
+    const value =
+        document.getElementById("sortSelect").value;
+
+
+    if (value === "low") {
+
+        products.sort((a, b) =>
+            Number(a.dataset.price) -
+            Number(b.dataset.price)
+        );
+
+    }
+
+
+    if (value === "high") {
+
+        products.sort((a, b) =>
+            Number(b.dataset.price) -
+            Number(a.dataset.price)
+        );
+
+    }
+
+
+    products.forEach(product => {
+        container.appendChild(product);
+    });
+
+}
+
+
+function scrollToTop() {
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+}
+
+</script>
+
+</body>
+</html>
